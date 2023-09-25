@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ProcessTypes constants</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../book.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../../../index.html">Home</a></li><li class="chapter-item affix "><li class="part-title">contracts</li><li class="chapter-item "><a href="../../../contracts/admin-ops/index.html">❱ admin-ops</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../contracts/admin-ops/IOpsEvents.sol/interface.IOpsEvents.html">IOpsEvents</a></li><li class="chapter-item "><a href="../../../contracts/admin-ops/OpsBaseProcessor.sol/abstract.OpsBaseProcessor.html">OpsBaseProcessor</a></li><li class="chapter-item "><a href="../../../contracts/admin-ops/OpsProcessor.sol/contract.OpsProcessor.html">OpsProcessor</a></li><li class="chapter-item "><a href="../../../contracts/admin-ops/OpsStorage.sol/contract.OpsStorage.html">OpsStorage</a></li><li class="chapter-item "><a href="../../../contracts/admin-ops/OpsTypes.sol/library.OpsTypes.html">OpsTypes</a></li></ol></li><li class="chapter-item "><a href="../../../contracts/bridge/index.html">❱ bridge</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../contracts/bridge/BridgeInteractor.sol/abstract.BridgeInteractor.html">BridgeInteractor</a></li><li class="chapter-item "><a href="../../../contracts/bridge/BridgeMediator.sol/contract.BridgeMediator.html">BridgeMediator</a></li><li class="chapter-item "><a href="../../../contracts/bridge/BridgeMessagesMapper.sol/abstract.BridgeMessagesMapper.html">BridgeMessagesMapper</a></li><li class="chapter-item "><a href="../../../contracts/bridge/BridgeModeSwitch.sol/abstract.BridgeModeSwitch.html">BridgeModeSwitch</a></li></ol></li><li class="chapter-item "><a href="../../../contracts/certificates/index.html">❱ certificates</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../contracts/certificates/Certificates.sol/contract.Certificates.html">Certificates</a></li><li class="chapter-item "><a href="../../../contracts/certificates/ERC1155D.sol/abstract.ERC1155D.html">ERC1155D</a></li><li class="chapter-item "><a href="../../../contracts/certificates/URIBuilder.sol/contract.URIBuilder.html">URIBuilder</a></li></ol></li><li class="chapter-item "><a href="../../../contracts/certs-management/index.html">❱ certs-management</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../contracts/certs-management/common/index.html">❱ common</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../contracts/certs-management/common/BaseManagementStorage.sol/contract.BaseManagementStorage.html">BaseManagementStorage</a></li><li class="chapter-item "><a href="../../../contracts/certs-management/common/IRequestsEvents.sol/interface.IRequestsEvents.html">IRequestsEvents</a></li></ol></li><li class="chapter-item "><a href="../../../contracts/certs-management/redemption/index.html">❱ redemption</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../contracts/certs-management/redemption/RedemptionProcessor.sol/contract.RedemptionProcessor.html">RedemptionProcessor</a></li><li class="chapter-item "><a href="../../../contracts/certs-management/redemption/RedemptionStorage.sol/contract.RedemptionStorage.html">RedemptionStorage</a></li></ol></li><li class="chapter-item "><a href="../../../contracts/certs-management/tokenization/index.html">❱ tokenization</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../contracts/certs-management/tokenization/TokenizationProcessor.sol/contract.TokenizationProcessor.html">TokenizationProcessor</a></li><li class="chapter-item "><a href="../../../contracts/certs-management/tokenization/TokenizationStorage.sol/contract.TokenizationStorage.html">TokenizationStorage</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../contracts/common/index.html">❱ common</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../contracts/common/ArrayUtils.sol/library.ArrayUtils.html">ArrayUtils</a></li><li class="chapter-item "><a href="../../../contracts/common/BaseProcessor.sol/abstract.BaseProcessor.html">BaseProcessor</a></li><li class="chapter-item "><a href="../../../contracts/common/BridgeInterable.sol/abstract.BridgeInterable.html">BridgeInterable</a></li><li class="chapter-item "><a href="../../../contracts/common/CallGuard.sol/abstract.CallGuard.html">CallGuard</a></li><li class="chapter-item "><a href="../../../contracts/common/HolderWallet.sol/contract.HolderWallet.html">HolderWallet</a></li><li class="chapter-item "><a href="../../../contracts/common/RelayerAware.sol/abstract.RelayerAware.html">RelayerAware</a></li><li class="chapter-item "><a href="../../../contracts/common/WalletManager.sol/contract.WalletManager.html">WalletManager</a></li></ol></li><li class="chapter-item "><a href="../../../contracts/forwarder/index.html">❱ forwarder</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../contracts/forwarder/Forwarder.sol/contract.Forwarder.html">Forwarder</a></li></ol></li><li class="chapter-item expanded "><a href="../../../contracts/multistep/index.html">❱ multistep</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../contracts/multistep/Process.sol/struct.Signature.html">Signature</a></li><li class="chapter-item "><a href="../../../contracts/multistep/Process.sol/struct.Process.html">Process</a></li><li class="chapter-item "><a href="../../../contracts/multistep/Process.sol/library.ProcessLib.html">ProcessLib</a></li><li class="chapter-item "><a href="../../../contracts/multistep/ProcessFactory.sol/contract.ProcessFactory.html">ProcessFactory</a></li><li class="chapter-item "><a href="../../../contracts/multistep/ProcessManager.sol/contract.ProcessManager.html">ProcessManager</a></li><li class="chapter-item expanded "><a href="../../../contracts/multistep/ProcessTypes.sol/constants.ProcessTypes.html" class="active">ProcessTypes constants</a></li><li class="chapter-item "><a href="../../../contracts/multistep/Step.sol/struct.Step.html">Step</a></li><li class="chapter-item "><a href="../../../contracts/multistep/Step.sol/library.StepLib.html">StepLib</a></li></ol></li><li class="chapter-item "><a href="../../../contracts/roles/index.html">❱ roles</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../contracts/roles/BaseRoleProcessor.sol/abstract.BaseRoleProcessor.html">BaseRoleProcessor</a></li><li class="chapter-item "><a href="../../../contracts/roles/RoleAssignProcessor.sol/contract.RoleAssignProcessor.html">RoleAssignProcessor</a></li><li class="chapter-item "><a href="../../../contracts/roles/RoleRemoveProcessor.sol/contract.RoleRemoveProcessor.html">RoleRemoveProcessor</a></li><li class="chapter-item "><a href="../../../contracts/roles/RoleRequestsStorage.sol/contract.RoleRequestsStorage.html">RoleRequestsStorage</a></li><li class="chapter-item "><a href="../../../contracts/roles/RolesManager.sol/contract.RolesManager.html">RolesManager</a></li></ol></li><li class="chapter-item "><a href="../../../contracts/shipment/index.html">❱ shipment</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../contracts/shipment/inbound/index.html">❱ inbound</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../contracts/shipment/inbound/InboundShipmentProcessor.sol/contract.InboundShipmentProcessor.html">InboundShipmentProcessor</a></li><li class="chapter-item "><a href="../../../contracts/shipment/inbound/InboundShipmentStorage.sol/contract.InboundShipmentStorage.html">InboundShipmentStorage</a></li></ol></li><li class="chapter-item "><a href="../../../contracts/shipment/outbound/index.html">❱ outbound</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../contracts/shipment/outbound/OutboundShipmentProcessor.sol/contract.OutboundShipmentProcessor.html">OutboundShipmentProcessor</a></li><li class="chapter-item "><a href="../../../contracts/shipment/outbound/OutboundShipmentStorage.sol/contract.OutboundShipmentStorage.html">OutboundShipmentStorage</a></li></ol></li><li class="chapter-item "><a href="../../../contracts/shipment/BaseShipmentStorage.sol/abstract.BaseShipmentStorage.html">BaseShipmentStorage</a></li><li class="chapter-item "><a href="../../../contracts/shipment/SharedShipmentStorage.sol/contract.SharedShipmentStorage.html">SharedShipmentStorage</a></li><li class="chapter-item "><a href="../../../contracts/shipment/ShipmentTypes.sol/library.ShipmentTypes.html">ShipmentTypes</a></li><li class="chapter-item "><a href="../../../contracts/shipment/ShipmentUtils.sol/library.ShipmentUtils.html">ShipmentUtils</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/MOONSTRUCK-team/agau-management" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="constants"><a class="header" href="#constants">Constants</a></h1>
+<p><a href="https://github.com/MOONSTRUCK-team/agau-management/blob/f4738cc1bed2ef96985e8eed62680b201c03aebf/contracts/multistep/ProcessTypes.sol">Git Source</a></p>
+<h3 id="create_inbound_shipment"><a class="header" href="#create_inbound_shipment">CREATE_INBOUND_SHIPMENT</a></h3>
+<pre><code class="language-solidity">bytes32 constant CREATE_INBOUND_SHIPMENT = hex&quot;3a3a1cb1509c949c6d16c452eadfb46499d0b482a284597cbf5eb29ce6f295ff&quot;;
+</code></pre>
+<h3 id="set_tokenizable_bars"><a class="header" href="#set_tokenizable_bars">SET_TOKENIZABLE_BARS</a></h3>
+<pre><code class="language-solidity">bytes32 constant SET_TOKENIZABLE_BARS = hex&quot;82596c81a562ad8d3098c85d5d0abec74a2a2dd4de4473987e1ef57e62296326&quot;;
+</code></pre>
+<h3 id="create_tokenization"><a class="header" href="#create_tokenization">CREATE_TOKENIZATION</a></h3>
+<pre><code class="language-solidity">bytes32 constant CREATE_TOKENIZATION = hex&quot;dbaf38a7677b2c8c92f285e7a42c5320c5a2a56a7fd3527d2acba13c3768f418&quot;;
+</code></pre>
+<h3 id="create_redemption"><a class="header" href="#create_redemption">CREATE_REDEMPTION</a></h3>
+<pre><code class="language-solidity">bytes32 constant CREATE_REDEMPTION = hex&quot;00472df0c6873a21dd743fdfb5e9b5f7e88793e0810b85a171c467b7aabac976&quot;;
+</code></pre>
+<h3 id="create_outbound_shipment"><a class="header" href="#create_outbound_shipment">CREATE_OUTBOUND_SHIPMENT</a></h3>
+<pre><code class="language-solidity">bytes32 constant CREATE_OUTBOUND_SHIPMENT = hex&quot;a382e67c0c2eaa8478834c4c691bbe8c24dfb89f4193c57287c6bee3050e3b97&quot;;
+</code></pre>
+<h3 id="refund_tokens"><a class="header" href="#refund_tokens">REFUND_TOKENS</a></h3>
+<pre><code class="language-solidity">bytes32 constant REFUND_TOKENS = hex&quot;4ca7c37e59864e65301b683e05e65b14cebfa8d0418e89a798784d301ad3d82e&quot;;
+</code></pre>
+<h3 id="create_freeze"><a class="header" href="#create_freeze">CREATE_FREEZE</a></h3>
+<pre><code class="language-solidity">bytes32 constant CREATE_FREEZE = hex&quot;1a0715c5f9b22ee24237d2ffdecca3830982fe43e8b5893f17820da1141469a3&quot;;
+</code></pre>
+<h3 id="create_unfreeze"><a class="header" href="#create_unfreeze">CREATE_UNFREEZE</a></h3>
+<pre><code class="language-solidity">bytes32 constant CREATE_UNFREEZE = hex&quot;51f711d166d858c561ba7d06d84e9cfaede6a5be06279d95e58dc65c3e4d9325&quot;;
+</code></pre>
+<h3 id="create_seize"><a class="header" href="#create_seize">CREATE_SEIZE</a></h3>
+<pre><code class="language-solidity">bytes32 constant CREATE_SEIZE = hex&quot;03ebcb089b495974d899be84280480faf09b0d9c5e93dfa53ab869ddbc042779&quot;;
+</code></pre>
+<h3 id="create_whitelist_group"><a class="header" href="#create_whitelist_group">CREATE_WHITELIST_GROUP</a></h3>
+<pre><code class="language-solidity">bytes32 constant CREATE_WHITELIST_GROUP = hex&quot;138045151e53f8da832eca31b2b024d3c9b9b840ae1dab7b747d67fbb2017bba&quot;;
+</code></pre>
+<h3 id="update_whitelist_group"><a class="header" href="#update_whitelist_group">UPDATE_WHITELIST_GROUP</a></h3>
+<pre><code class="language-solidity">bytes32 constant UPDATE_WHITELIST_GROUP = hex&quot;9c6333a0b8ff0de4802f795776953cc55c13dfa1e090a3bc6c3d8695fdb492e6&quot;;
+</code></pre>
+<h3 id="set_user_whitelist_group"><a class="header" href="#set_user_whitelist_group">SET_USER_WHITELIST_GROUP</a></h3>
+<pre><code class="language-solidity">bytes32 constant SET_USER_WHITELIST_GROUP = hex&quot;8e1492c5b4fcdde4d631d317bbe8253aa01fbdbaf00fbd163114a7dd87c8b223&quot;;
+</code></pre>
+<h3 id="update_transaction_fee_rate"><a class="header" href="#update_transaction_fee_rate">UPDATE_TRANSACTION_FEE_RATE</a></h3>
+<pre><code class="language-solidity">bytes32 constant UPDATE_TRANSACTION_FEE_RATE = hex&quot;dd14d50e107c25d3f0bc95b708097408874abd482f4ae8f81dc0c2f715813eb2&quot;;
+</code></pre>
+<h3 id="update_fee_amount_range"><a class="header" href="#update_fee_amount_range">UPDATE_FEE_AMOUNT_RANGE</a></h3>
+<pre><code class="language-solidity">bytes32 constant UPDATE_FEE_AMOUNT_RANGE = hex&quot;b8a309b3aab0cfafa43b5823d161474a7064b026488e94d1a82f4bdbafdd89d7&quot;;
+</code></pre>
+<h3 id="tm_add"><a class="header" href="#tm_add">TM_ADD</a></h3>
+<pre><code class="language-solidity">bytes32 constant TM_ADD = hex&quot;a0b7355b6a70606d27a2f7216c7f5e372a434a2ca1e784f6106612be658d4294&quot;;
+</code></pre>
+<h3 id="tm_remove"><a class="header" href="#tm_remove">TM_REMOVE</a></h3>
+<pre><code class="language-solidity">bytes32 constant TM_REMOVE = hex&quot;775e6fce29fbe7a203f7c263cdeec4656482219a4f508dec4612e00a52514d3b&quot;;
+</code></pre>
+<h3 id="wa_add"><a class="header" href="#wa_add">WA_ADD</a></h3>
+<pre><code class="language-solidity">bytes32 constant WA_ADD = hex&quot;f12952cb3d893fff3e59f3e8323454cc70930f4bbe41d11aac89458b1359e0c9&quot;;
+</code></pre>
+<h3 id="wa_remove"><a class="header" href="#wa_remove">WA_REMOVE</a></h3>
+<pre><code class="language-solidity">bytes32 constant WA_REMOVE = hex&quot;cd9e157965b5645ed18727ff42552a9e5e266099610f0da5ecd9c87eae119acd&quot;;
+</code></pre>
+<h3 id="tme_add"><a class="header" href="#tme_add">TME_ADD</a></h3>
+<pre><code class="language-solidity">bytes32 constant TME_ADD = hex&quot;7ef569fd940efd6639493d5d5ba51e4edb82261e2e9fe8e695a885821c4429cd&quot;;
+</code></pre>
+<h3 id="tme_remove"><a class="header" href="#tme_remove">TME_REMOVE</a></h3>
+<pre><code class="language-solidity">bytes32 constant TME_REMOVE = hex&quot;410d13db254038e0c26b15ecf853909dab48fe0e1a0e2bcdeeba74332004b90c&quot;;
+</code></pre>
+<h3 id="tma_add"><a class="header" href="#tma_add">TMA_ADD</a></h3>
+<pre><code class="language-solidity">bytes32 constant TMA_ADD = hex&quot;6ecdf4c7b11c4f99b1a1c930aa14accdeda85a0620f4edd40bab819af680a1e4&quot;;
+</code></pre>
+<h3 id="tma_remove"><a class="header" href="#tma_remove">TMA_REMOVE</a></h3>
+<pre><code class="language-solidity">bytes32 constant TMA_REMOVE = hex&quot;5e83053b044cbb6f82ee6b15f85221ea027f722a50593e933a1c1689fbfa996b&quot;;
+</code></pre>
+<h3 id="au_add"><a class="header" href="#au_add">AU_ADD</a></h3>
+<pre><code class="language-solidity">bytes32 constant AU_ADD = hex&quot;01c4cc170fcd5ac515585b27aeca5a6acd81f3423fc19e87ad0cc0c065972520&quot;;
+</code></pre>
+<h3 id="au_remove"><a class="header" href="#au_remove">AU_REMOVE</a></h3>
+<pre><code class="language-solidity">bytes32 constant AU_REMOVE = hex&quot;09fa003f11b87dc7fc0bfcb1595d49cf350dafeeb6244ba7f40f5384ae1f8ad9&quot;;
+</code></pre>
+<h3 id="uma_add"><a class="header" href="#uma_add">UMA_ADD</a></h3>
+<pre><code class="language-solidity">bytes32 constant UMA_ADD = hex&quot;e08000618463fc9be30eb768e87dd910be696462045737cec8402eb67b3488b8&quot;;
+</code></pre>
+<h3 id="uma_remove"><a class="header" href="#uma_remove">UMA_REMOVE</a></h3>
+<pre><code class="language-solidity">bytes32 constant UMA_REMOVE = hex&quot;2be3159518a6bd4b7a404a7352174bc4127263c2cbaafc206444dcdb617ab7f9&quot;;
+</code></pre>
+<h3 id="dir_add"><a class="header" href="#dir_add">DIR_ADD</a></h3>
+<pre><code class="language-solidity">bytes32 constant DIR_ADD = hex&quot;c7e717c73600f7c591220b9a0d97128542b026df0f40ebf1887051364eb36e90&quot;;
+</code></pre>
+<h3 id="dir_remove"><a class="header" href="#dir_remove">DIR_REMOVE</a></h3>
+<pre><code class="language-solidity">bytes32 constant DIR_REMOVE = hex&quot;e9992e353d5fee1ccb3015004b85c3c775de6c8eb07144f6ed755e894b7b5d29&quot;;
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../contracts/multistep/ProcessManager.sol/contract.ProcessManager.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../../contracts/multistep/Step.sol/struct.Step.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../contracts/multistep/ProcessManager.sol/contract.ProcessManager.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../../contracts/multistep/Step.sol/struct.Step.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr.min.js"></script>
+        <script src="../../../mark.min.js"></script>
+        <script src="../../../searcher.js"></script>
+
+        <script src="../../../clipboard.min.js"></script>
+        <script src="../../../highlight.js"></script>
+        <script src="../../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../../solidity.min.js"></script>
+
+
+    </div>
+    </body>
+</html>
